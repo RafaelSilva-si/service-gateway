@@ -2,6 +2,10 @@
 > Status: Em desenvolvimento ⚙
 
 Esse projeto é um [Microserviço](https://www.redhat.com/pt-br/topics/microservices/what-are-microservices) que pertence ao projeto [Tickets Microservices](https://github.com/RafaelSilva-si/tickets-microservices) que exemplifica os conceitos e fundamentos dos microserviços, implementados utilizando Node.js e Express. O foco principal é a criação de uma aplicação de vendas de tickets para eventos. Adotando práticas de Clean Code e TDD (Test-Driven Development), este projeto não apenas oferece uma implementação funcional, mas também destaca a importância da organização do código e da escrita de testes robustos.
+
+### Sobre este serviço
+O API Gateway atua como um ponto de entrada para diferentes serviços do sistema, funcionando como um proxy. Ele recebe as requisições dos clientes e as encaminha para o serviço apropriado, abstraindo a complexidade do sistema backend. Além disso, o API Gateway pode realizar tarefas como autenticação, autorização, balanceamento de carga, roteamento de solicitações e agregação de respostas, melhorando a eficiência e a segurança das comunicações entre clientes e serviços backend.
+
 ## Boas Práticas
 
 ### TDD
