@@ -20,8 +20,17 @@ const authServiceProxy = createProxyMiddleware({
   },
 });
 
+const eventsServiceProxy = createProxyMiddleware({
+  target: envs.EVENTS_SERVICE_URL,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/event": "",
+  },
+});
+
 app.use("/user", userServiceProxy);
 app.use("/auth", authServiceProxy);
+app.use("/event", eventsServiceProxy);
 
 const PORT = envs.PORT;
 app.listen(PORT, () => {
