@@ -20,8 +20,26 @@ const authServiceProxy = createProxyMiddleware({
   },
 });
 
+const cartServiceProxy = createProxyMiddleware({
+  target: envs.CART_SERVICE_URL,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/cart": "",
+  },
+});
+
+const eventsServiceProxy = createProxyMiddleware({
+  target: envs.EVENTS_SERVICE_URL,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/event": "",
+  },
+});
+
 app.use("/user", userServiceProxy);
 app.use("/auth", authServiceProxy);
+app.use("/event", eventsServiceProxy);
+app.use("/cart", cartServiceProxy);
 
 const PORT = envs.PORT;
 app.listen(PORT, () => {
